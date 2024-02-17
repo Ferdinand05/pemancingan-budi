@@ -1,9 +1,9 @@
 <div id="default-carousel" class="relative w-full" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden  md:h-[650px]">
+    <div class="relative h-[400px]   overflow-hidden  md:h-[650px]">
         <!-- Item 1 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <div class="relative top-1/3 z-50  text-white md:px-28">
+            <div class="relative top-1/3 z-50  text-white md:px-28 px-8">
                 <h2 class="font-semibold md:text-4xl text-center md:text-start">Rasakan Sensasi Memancing Ikan yang
                     Menantang
                     dan
@@ -15,8 +15,12 @@
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div class="relative top-1/3 z-50  text-white md:px-28">
+                <h2 class="font-semibold md:text-4xl text-center md:text-start">Strike!
+                </h2>
+            </div>
             <img src="/img/carousel/1.jpg"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                class="absolute block w-full  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
@@ -25,11 +29,14 @@
                 </h2>
             </div>
             <img src="/img/carousel/3.jpg"
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                class="absolute block w-full  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 4 -->
         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-
+            <div class="relative top-1/3 z-50 text-blue-500 px-28">
+                <h2 class="font-semibold md:text-4xl text-center md:text-start">Mancing bersama Keluarga dan Kerabat
+                </h2>
+            </div>
             <img src="/img/carousel/4.jpg"
                 class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
