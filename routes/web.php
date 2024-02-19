@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,6 @@ Route::get('/', HomeController::class)->name('home');
 
 // Blog
 Route::get('blog', [BlogController::class, 'index'])->name('blog');
+
+// dashboard
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');

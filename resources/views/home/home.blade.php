@@ -1,7 +1,7 @@
 <x-app-layout title="Home">
     <x-carousel></x-carousel>
 
-    <div class="px-8 py-16 md:px-16 md:py-32 -scroll-mt-28" id="tentang">
+    <div class="px-8 py-16 md:px-16 md:py-32 -scroll-mt-28  border-t-8 border-t-blue-500" id="tentang">
         <div class="md:flex md:flex-col space-y-5">
             <div class="text-center md:text-left">
                 <h2 class="text-xl md:text-2xl font-semibold mb-3 md:tracking-wider">Tentang Kami</h2>
@@ -58,12 +58,23 @@
                             <p class=" italic text-xs md:text-sm font-light">Harga dapat berubah sewaktu - waktu</p>
                         </div>
 
+                        <h5 class="font-semibold text-lg mb-3 md:text-xl mt-10">Galatama Lele </h5>
+                        <div class="flex md:space-x-32 justify-between md:justify-normal">
+                            <div>
+                                <p class="text-lg md:text-xl">Senin - Minggu</p>
+                                <p>20K - 1 Joran</p>
+                            </div>
+                        </div>
+
+
                     </div>
+
                     {{-- banner --}}
                     <div class="mt-10 md:mt-0 md:flex-1">
                         <img src="/img/banner.jpg" alt="" class="md:w-[400px]  w-64 mx-auto">
                     </div>
                 </div>
+
 
 
             </div>
