@@ -9,3 +9,19 @@
 .alert-danger {
     @apply text-white bg-red-400 dark:bg-gray-800 dark:text-red-400;
 }
+
+h3 {
+    @apply text-2xl font-semibold;
+}
+
+h4 {
+    @apply font-semibold text-xl;
+}
+
+h2 {
+    @apply font-semibold text-3xl;
+}
+
+h1 {
+    @apply font-semibold text-4xl;
+}

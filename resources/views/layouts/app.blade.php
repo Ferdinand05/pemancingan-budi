@@ -9,7 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+
+    {{-- ckeditor5 --}}
+    <script src="\assets\ckeditor5-build-classic\ckeditor.js"></script>
     <title>{{ $title }}</title>
+
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
