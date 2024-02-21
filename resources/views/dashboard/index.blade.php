@@ -17,7 +17,8 @@
         </div>
         <div class="flex md:justify-around flex-wrap gap-y-5">
 
-            <a href="" class=" bg-blue-300  rounded border inline-block p-2 border-gray-400 shadow">
+            <a href="{{ route('category.index') }}"
+                class=" bg-blue-300  rounded border inline-block p-2 border-gray-400 shadow">
                 <div class="">
                     <h3 class="font-semibold text-xl">Category</h3>
                     <p class="text-gray-700 text-sm">Membuat, Mengedit dan Menghapus Kategori Post</p>
@@ -25,7 +26,8 @@
 
             </a>
 
-            <a href="" class=" bg-green-300  rounded border inline-block p-2 border-gray-400 shadow">
+            <a href="{{ route('posts.index') }}"
+                class=" bg-green-300  rounded border inline-block p-2 border-gray-400 shadow">
                 <div class="">
                     <h3 class="font-semibold text-xl">Post</h3>
                     <p class="text-gray-700 text-sm">Membuat, Mengedit dan Menghapus Postingan</p>
