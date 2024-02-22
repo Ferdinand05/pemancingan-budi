@@ -10,6 +10,10 @@
     @apply text-white bg-red-400 dark:bg-gray-800 dark:text-red-400;
 }
 
+.body a {
+    @apply text-blue-700 hover:underline;
+}
+
 h3 {
     @apply text-2xl font-semibold;
 }

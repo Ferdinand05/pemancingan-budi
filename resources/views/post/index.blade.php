@@ -1,4 +1,4 @@
-<x-app-layout title="Cateogries">
+<x-app-layout title="Posts">
     <div class="flex justify-between items-center px-7 md:px-14 mt-5">
         <div class="">
             <h2 class="font-semibold md:text-2xl">Posts Dashboard</h2>
@@ -61,9 +61,14 @@
                             <td class="px-6 py-4">
                                 {{ $post->created_at->toFormattedDateString() }}
                             </td>
-                            <td class="px-6 py-4">
-                                <a href="#"
+                            <td class="px-6 py-4 flex gap-x-4 items-center">
+                                <a href="{{ route('posts.edit', $post->slug) }}"
                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="hover:underline text-red-500">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

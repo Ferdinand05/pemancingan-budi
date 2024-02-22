@@ -1,4 +1,4 @@
-<x-app-layout title="Cateogries">
+<x-app-layout title="Categories">
 
     @if (session()->has('success'))
         <x-alert type="success">

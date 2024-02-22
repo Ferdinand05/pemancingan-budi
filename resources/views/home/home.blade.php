@@ -61,7 +61,7 @@
                         <h5 class="font-semibold text-lg mb-3 md:text-xl mt-10">Galatama Lele </h5>
                         <div class="flex md:space-x-32 justify-between md:justify-normal">
                             <div>
-                                <p class="text-lg md:text-xl">Senin - Minggu</p>
+                                <p class="text-lg md:text-xl">Senin - Sabtu</p>
                                 <p>20K - 1 Joran</p>
                             </div>
                         </div>
