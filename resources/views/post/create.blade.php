@@ -7,8 +7,8 @@
     @endif
 
     <x-container>
-
         <div class="-mt-12 mb-5">
+            {{ Breadcrumbs::render('posts.create') }}
             <h2 class="font-semibold text-2xl">Create Post</h2>
             <p class="text-gray-500 text-sm">Setup your content</p>
         </div>

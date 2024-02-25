@@ -10,6 +10,7 @@
 
 
     <x-container>
+        {{ Breadcrumbs::render('categories.edit', $category) }}
         <div class=" mb-5">
             <h2 class="font-semibold text-xl">Edit Category</h2>
             <p class="text-sm text-gray-500">Edit categories for your posts</p>

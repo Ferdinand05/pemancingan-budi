@@ -76,7 +76,7 @@ class CategoryController extends Controller
             'slug' => Str::slug($request->category)
         ]);
 
-        return redirect()->route('category.index')->with('success', 'Data has been changed!');
+        return redirect()->route('category.index')->with('success', 'Category name has been changed!');
     }
 
     /**

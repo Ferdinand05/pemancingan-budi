@@ -1,8 +1,15 @@
 <x-app-layout title="Edit Post  | {{ $post->title }}">
 
 
+
+
     <section>
         <div class="px-8 py-12 md:px-52 md:py-24">
+
+            <div>
+                {{ Breadcrumbs::render('post.show', $post) }}
+            </div>
+
             <div>
                 <h2>
                     {{ $post->title }}

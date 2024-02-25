@@ -33,11 +33,14 @@
                     <div
                         class="max-w-md  bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="{{ route('posts.show', $post->slug) }}">
-                            <img class="rounded-t-lg" src="/storage/{{ $post->image }}" alt="" />
+                            <img class="rounded-t-lg hover:grayscale duration-150" src="/storage/{{ $post->image }}"
+                                alt="" />
                         </a>
                         <div class="p-5">
+                            <span
+                                class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{ $post->categories->name }}</span>
                             <a href="{{ route('posts.show', $post->slug) }}">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                <h5 class=" my-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     {{ $post->title }}
                                 </h5>
                             </a>

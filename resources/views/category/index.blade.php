@@ -12,8 +12,15 @@
         </x-alert>
     @endif
 
+
     <div class="flex justify-between items-center px-7 md:px-14 mt-10">
+
+
+
         <div class="">
+            <div>
+                {{ Breadcrumbs::render('categories') }}
+            </div>
             <h2 class="font-semibold md:text-2xl">Categories Dashboard</h2>
             <p class="text-sm text-gray-500">Create, Edit , Delete your Categories</p>
         </div>

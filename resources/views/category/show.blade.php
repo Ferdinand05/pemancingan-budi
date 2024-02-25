@@ -1,7 +1,12 @@
 <x-app-layout title="{{ $category->name }}">
     <x-container>
 
+
+
         <div class="md:ms-16">
+            <div>
+                {{ Breadcrumbs::render('category.post', $category) }}
+            </div>
             <div>
                 <h2>{{ $category->name }}</h2>
                 <p class="text-gray-600">Some posts with {{ $category->name }} Category</p>

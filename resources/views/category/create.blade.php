@@ -10,6 +10,10 @@
 
 
     <x-container>
+        <div>
+            {{ Breadcrumbs::render('categories.create') }}
+
+        </div>
         <div class=" mb-5">
             <h2 class="font-semibold text-xl">Create Category</h2>
             <p class="text-sm text-gray-500">Create categories for your posts</p>

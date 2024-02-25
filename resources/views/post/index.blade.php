@@ -1,6 +1,7 @@
 <x-app-layout title="Posts">
     <div class="flex justify-between items-center px-7 md:px-14 mt-5">
         <div class="">
+            {{ Breadcrumbs::render('posts') }}
             <h2 class="font-semibold md:text-2xl">Posts Dashboard</h2>
             <p class="text-sm">Create, Edit , Delete your Posts</p>
         </div>
