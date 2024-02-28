@@ -29,3 +29,7 @@ h2 {
 h1 {
     @apply font-semibold text-4xl;
 }
+
+.error {
+    @apply border-red-600 ring-red-600;
+}

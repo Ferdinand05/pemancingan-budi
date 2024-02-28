@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Providers\RouteServiceProvider as ProvidersRouteServiceProvider;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
@@ -10,5 +16,32 @@ class LoginController extends Controller
     {
 
         return view('auth.login');
+    }
+
+    public function store(Request $request)
+    {
+
+        $request->validate([
+            'email' => ['email', 'required'],
+            'password' => ['required']
+        ]);
+
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+
+            return redirect()->to(ProvidersRouteServiceProvider::HOME)->with('success', 'Welcome!');
+        }
+
+
+        return ValidationException::withMessages([
+            'email' => 'Your credentials doesnt match with our records.'
+        ]);
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect()->route('login');
     }
 }
