@@ -13,9 +13,9 @@
     {{-- Menu --}}
     <section class="py-12 px-12">
         <div>
-            <h3 class="text-center font-semibold text-2xl mb-10">Menu</h3>
+            <h3 class="text-center font-semibold text-2xl mb-10">Admin Menu</h3>
         </div>
-        <div class="flex md:justify-around flex-wrap gap-y-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
             <a href="{{ route('category.index') }}"
                 class=" shadow-md  rounded border inline-block p-2 border-gray-300 hover:bg-gray-100">
@@ -31,6 +31,13 @@
                 <div class="">
                     <h3 class="font-semibold text-xl">Post ( {{ $posts }} )</h3>
                     <p class="text-gray-700 text-sm">Membuat, Mengedit dan Menghapus Postingan</p>
+                </div>
+            </a>
+            <a href="{{ route('users') }}"
+                class="   rounded border inline-block p-2 border-gray-300 shadow-md hover:bg-gray-100">
+                <div class="">
+                    <h3 class="font-semibold text-xl">Users ( {{ $users }} )</h3>
+                    <p class="text-gray-700 text-sm">Controll All Users</p>
                 </div>
             </a>
 

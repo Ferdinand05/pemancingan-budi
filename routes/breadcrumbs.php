@@ -5,19 +5,23 @@
 
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\User;
 use Diglactic\Breadcrumbs\Breadcrumbs;
 
 // This import is also not required, and you could replace `BreadcrumbTrail $trail`
 //  with `$trail`. This is nice for IDE type checking and completion.
 use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 
-// Home
+// Blog
 Breadcrumbs::for('blog', function (BreadcrumbTrail $trail) {
     $trail->push('Blog', route('blog'));
 });
+// dashboard
 Breadcrumbs::for('dashboard', function (BreadcrumbTrail $trail) {
     $trail->push('Dashboard', route('dashboard'));
 });
+
+
 
 // Blog > Post
 Breadcrumbs::for('post.show', function (BreadcrumbTrail $trail, Post $post) {
@@ -56,6 +60,8 @@ Breadcrumbs::for('categories.edit', function (BreadcrumbTrail $trail, Category $
 
 
 
+
+
 // parent
 // Dashboard / Posts 
 Breadcrumbs::for('posts', function (BreadcrumbTrail $trail) {
@@ -68,8 +74,22 @@ Breadcrumbs::for('posts.create', function (BreadcrumbTrail $trail) {
     $trail->parent('posts');
     $trail->push('Create', route('posts.create'));
 });
+
 // Dashboard / Posts / Edit
 Breadcrumbs::for('posts.edit', function (BreadcrumbTrail $trail, Post $post) {
     $trail->parent('posts');
     $trail->push('Edit', route('posts.edit', $post));
+});
+
+
+// Dashboard -> users
+Breadcrumbs::for('users', function (BreadcrumbTrail $trail) {
+    $trail->parent('dashboard');
+    $trail->push('Users', route('users'));
+});
+
+// Dashboard -> users -> Edit
+Breadcrumbs::for('users.edit', function (BreadcrumbTrail $trail, User $user) {
+    $trail->parent('users');
+    $trail->push($user->username, route('users.edit', $user));
 });

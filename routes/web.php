@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Bootstrap\RegisterProviders;
 use Illuminate\Support\Facades\Route;
 
@@ -52,4 +53,11 @@ Route::group(['middleware' => ['role:admin']], function () {
 
     // Post
     Route::resource('posts', PostController::class);
+
+
+    // users
+    Route::get('users', [UserController::class, 'index'])->name('users');
+    Route::get('users/{username}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('users/{username}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('users/{username}', [UserController::class, 'destroy'])->name('users.destroy');
 });

@@ -21,7 +21,6 @@ class RegisterController extends Controller
             'username' => $request->username,
             'password' => $request->password
         ]);
-
         $user->assignRole(4);
 
 
