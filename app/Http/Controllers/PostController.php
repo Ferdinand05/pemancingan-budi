@@ -6,6 +6,7 @@ use App\Http\Requests\PostRequest;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
@@ -45,6 +46,7 @@ class PostController extends Controller
             'title' => $request->title,
             'slug' => Str::slug($request->title) . "-" . Str::random(10),
             'category_id' => $request->category,
+            'user_id' => Auth::user()->id,
             'image' => $image,
             'body' => $request->body
         ]);

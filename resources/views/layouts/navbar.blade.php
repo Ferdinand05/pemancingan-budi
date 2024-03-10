@@ -53,7 +53,7 @@
                                     </li>
                                 @endrole
                                 <li>
-                                    <a href="#"
+                                    <a href="{{ route('settings.edit', Auth::user()->username) }}"
                                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
                                 </li>
 

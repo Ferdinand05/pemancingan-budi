@@ -7,6 +7,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SettingsController;
+use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Bootstrap\RegisterProviders;
 use Illuminate\Support\Facades\Route;
@@ -37,8 +39,15 @@ Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'store'])->name('register.store');
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'store'])->name('login.store');
-Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
+
+Route::middleware('auth')->group(function () {
+    Route::get('logout', [LoginController::class, 'logout'])->name('logout');
+
+    Route::resource('settings', SettingsController::class);
+
+    Route::put('update-password', [UpdatePasswordController::class, 'update'])->name('update.password');
+});
 
 // Route::middleware('role:admin')->group(function () {
 // });
@@ -56,8 +65,11 @@ Route::group(['middleware' => ['role:admin']], function () {
 
 
     // users
-    Route::get('users', [UserController::class, 'index'])->name('users');
-    Route::get('users/{username}/edit', [UserController::class, 'edit'])->name('users.edit');
-    Route::put('users/{username}', [UserController::class, 'update'])->name('users.update');
-    Route::delete('users/{username}', [UserController::class, 'destroy'])->name('users.destroy');
+
+    Route::controller(UserController::class)->group(function () {
+        Route::get('users', 'index')->name('users');
+        Route::get('users/{username}/edit', 'edit')->name('users.edit');
+        Route::put('users/{username}', 'update')->name('users.update');
+        Route::delete('users/{username}', 'destroy')->name('users.destroy');
+    });
 });

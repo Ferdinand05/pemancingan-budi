@@ -40,6 +40,7 @@
     @stack('scripts')
 
 
+    <script src="https://cdn.ckbox.io/ckbox/latest/ckbox.js"></script>
 
 </body>
 
