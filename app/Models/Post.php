@@ -11,7 +11,7 @@ class Post extends Model
     use HasFactory, HasUuids;
 
     protected $fillable = [
-        'title', 'slug', 'body', 'image', 'category_id'
+        'title', 'slug', 'body', 'image', 'category_id', 'user_id'
     ];
 
     public function categories()

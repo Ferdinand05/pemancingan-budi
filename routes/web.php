@@ -10,9 +10,14 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Bootstrap\RegisterProviders;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Str;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,6 +53,19 @@ Route::middleware('auth')->group(function () {
 
     Route::put('update-password', [UpdatePasswordController::class, 'update'])->name('update.password');
 });
+
+
+// reset password
+Route::get('forgot-password', [LoginController::class, 'forgot_password'])->name('forgot-password');
+Route::post('forgot-password', [LoginController::class, 'forgot_password_store'])->name('forgot-password-store');
+Route::get('reset-password/{token}', [LoginController::class, 'reset_password'])->name('reset-password');
+Route::post('reset-password', [LoginController::class, 'reset_password_store'])->name('reset-password-store');
+
+
+
+
+
+
 
 // Route::middleware('role:admin')->group(function () {
 // });
