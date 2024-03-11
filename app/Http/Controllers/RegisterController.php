@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'username' => $request->username,
             'password' => $request->password
         ]);
-        $user->assignRole(4);
+        $user->assignRole(2);
 
 
         return redirect()->route('login')->with('success', 'Account has been created successfully.');

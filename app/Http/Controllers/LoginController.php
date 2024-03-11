@@ -14,6 +14,7 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Validation\ValidationServiceProvider;
@@ -92,7 +93,6 @@ class LoginController extends Controller
     {
 
         $checkToken = PasswordResetToken::whereToken($token)->first();
-
         if ($checkToken) {
             return view('auth.reset-password', ['token' => $token]);
         }
@@ -110,17 +110,16 @@ class LoginController extends Controller
 
 
         // check apakah ada user token di table password_reset_tokens
-        $userToken = PasswordResetToken::where('token', $request->token)->first();
-
+        $userToken = PasswordResetToken::query()->where('token', $request->token_reset)->first();
         // mendapatkan user lewat email yg ada di token
-        $user = User::where('email', $userToken->email)->first();
         if ($userToken) {
             // ada
-
+            $user = User::where('email', $userToken->email)->first();
             $user->update([
                 'password' => $request->password_confirmation
             ]);
 
+            $userToken->delete();
             return redirect()->to(route('login'))->with('success', 'Password has been changed!');
         } else {
             // user tidak ada

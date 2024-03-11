@@ -55,7 +55,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-// reset password
+// reset passwordr
 Route::get('forgot-password', [LoginController::class, 'forgot_password'])->name('forgot-password');
 Route::post('forgot-password', [LoginController::class, 'forgot_password_store'])->name('forgot-password-store');
 Route::get('reset-password/{token}', [LoginController::class, 'reset_password'])->name('reset-password');

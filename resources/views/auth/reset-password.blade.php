@@ -14,7 +14,7 @@
                 <form class="mt-4 space-y-4 lg:mt-5 md:space-y-5" action="{{ route('reset-password-store') }}"
                     method="post">
                     @csrf
-                    <input type="hidden" name="token" value="{{ $token }}">
+                    <input type="hidden" name="token_reset" value="{{ $token }}">
                     <div>
                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">New
                             Password</label>
