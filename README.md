@@ -26,5 +26,5 @@ I dedicate my project to help my father's fishing business.
 
 ## Screenshots
 
-![App Screenshot](https://i.ibb.co/cXrMcBz/pemancingan-budi.png)
+![App Screenshot](https://i.ibb.co/jZ7fvyV/pemancingan-budi-Cover.png)
 
